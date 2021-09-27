@@ -29,6 +29,9 @@ while ( have_posts() ) :
 	}
 
 	the_post();
+	
+	// manual shortcode insertion
+	//echo do_shortcode("[your_shortcode]");
 
 	get_template_part( 'template-parts/content/content-single' );
 

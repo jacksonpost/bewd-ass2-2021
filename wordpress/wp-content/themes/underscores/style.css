@@ -34,6 +34,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Links
 	- Forms
 ## Layouts
+## HACKS (sort these out properly)
 # Components
 	- Navigation
 	- Posts and pages
@@ -396,6 +397,7 @@ html {
 
 /* Typography
 --------------------------------------------- */
+
 body,
 button,
 input,
@@ -403,7 +405,8 @@ select,
 optgroup,
 textarea {
 	color: #404040;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	/* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; */
+	font-family: 'Poppins', sans-serif;
 	font-size: 1rem;
 	line-height: 1.5;
 }
@@ -641,17 +644,114 @@ textarea {
 # Layouts
 --------------------------------------------------------------*/
 
+.site{
+}
+
+.col-2{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.col-3{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+.site-header,
+.site-main,
+.site-footer{
+	padding: 1rem;
+}
+
+.site-footer{
+	border-top: 1px solid black;
+}
+
+.entry-content{
+	display: grid;
+}
+	.entry-content > ul{
+
+	}
+
+.display-posts-listing{
+	list-style: none;
+	padding: 0;
+}
+
+/*--------------------------------------------------------------
+# HACKS - stuff to be handled better or moved elsewhere
+--------------------------------------------------------------*/
+
+/* Stop date and byline showing on posts */
+.entry-meta{
+	display: none !important;	
+}
+
+/* Stop post meta showing - cat links, tags, comments, edit link */
+.entry-footer{
+	display: none !important;
+}
+
+article .post-thumbnail img{
+	max-height: 300px;
+	width: auto;
+}
+
+.news{
+	/* background: red; */
+}
+
+.news .entry-content{
+	
+}
+
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
 
 /* Navigation
 --------------------------------------------- */
+.site-header{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 2rem;
+	border-bottom: 1px solid black;
+}
+.site-header a{
+	text-decoration: none;
+}
+.site-header h1{
+	margin: 0;
+}
+
+/* .site-branding *{
+} */
+
 .main-navigation {
 	display: block;
 	width: 100%;
 }
+.main-navigation > div{
+	height: 100%;
+}
 
+.nav-menu{
+	/* display: grid;
+	justify-content: space-around; */
+	display: flex;
+	height: 100%;
+	justify-content: space-around;
+	align-items: center;
+}
+.nav-menu li{
+	flex: 1 1 auto;
+	text-align: center;
+	text-transform: capitalize;
+	border-left: 1px solid black;
+}
+
+/* hamburger */
 .main-navigation ul {
 	display: none;
 	list-style: none;
